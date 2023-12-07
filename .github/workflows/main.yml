@@ -1,0 +1,14 @@
+name: notify-gchat-on-issue
+on:
+  issues:
+    types:
+    - opened
+    - closed
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Git Details
+      run: |
+        echo "Issue creator: ${{ github.event.issue.user.login }}"
+        echo "Issue title: ${{ github.event.issue.title }}"
